@@ -15,7 +15,7 @@ from sahi.predict import Predictor
 from sahi import AutoDetectionModel
 from sahi.utils.file import check_and_create_directory
 
-model = torch.hub.load('ultralytics/yolov5:v5.0', 'yolov5s')  # Change this for other YOLOv5 models (e.g., yolov5m, yolov5l)
+model = torch.hub.load('ultralytics/yolov5:v5.0', 'yolov5s')  # Change this for other YOLOv5 models (e.g., yolov5m, yolov5l)(s has less no of parameters to get accurate and precision in real time).
 detection_model = AutoDetectionModel.from_pretrained("yolov5s", model_type="yolov5")  # Use the correct YOLOv5 model
 predictor = Predictor(detection_model) 
 
